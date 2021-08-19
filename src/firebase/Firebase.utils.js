@@ -3,13 +3,13 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = { 
-    apiKey: "AIzaSyCe020pJDMT52EYQaCJAMKeucuWxiks9Go",
-    authDomain: "e-commerece-a7390.firebaseapp.com",
-    projectId: "e-commerece-a7390",
-    storageBucket: "e-commerece-a7390.appspot.com",
-    messagingSenderId: "242081029621",
-    appId: "1:242081029621:web:93f8dc052469faec2114bc",
-    measurementId: "G-2SC42QV4H3"
+    apiKey: "AIzaSyCg3zjpHytuIPhFcXc_WPgp3w7T9Rohb-8",
+    authDomain: "chan-s-kart.firebaseapp.com",
+    projectId: "chan-s-kart",
+    storageBucket: "chan-s-kart.appspot.com",
+    messagingSenderId: "65606877853",
+    appId: "1:65606877853:web:6142a4e238c6e9a2148a74",
+    measurementId: "G-CLQGMXRKMX"
   };
 
 

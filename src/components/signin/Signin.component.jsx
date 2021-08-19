@@ -3,6 +3,8 @@ import FormInput from '../forminput/FormInput.component';
 import './Signin.styles.scss';
 import CustomButton from '../custombutton/CustomButton.component';
 import {signInWithGoogle, auth} from '../../firebase/Firebase.utils';
+import {setLoader} from '../../redux/loader/loader.action'; 
+import {connect} from 'react-redux';
 
 class Signin extends React.Component{
 	constructor(props){
@@ -13,16 +15,22 @@ class Signin extends React.Component{
 		}
 	}
 
-	handleSubmit = async event =>{
+	handleSubmit = event =>{
 		event.preventDefault();
 		const {email, password} = this.state;
-		try{
-			await auth.signInWithEmailAndPassword(email, password);
+		const {setLoader} = this.props;
+	const func = async() => {
+			try{
+				await auth.signInWithEmailAndPassword(email, password);
+			}
+			catch(err){
+				console.log(err)
+			}
+			setLoader(null);
+			this.setState({email : '', password : ''})
 		}
-		catch(err){
-			console.log(err)
-		}
-		this.setState({email : '', password : ''})
+		func();
+		setLoader(true);
 	}
 
 	handleChange = event =>{
@@ -48,4 +56,8 @@ class Signin extends React.Component{
 	}
 }
 
-export default Signin;
+const dispatchAction = (dispatch) =>({
+	setLoader : loader => dispatch(setLoader(loader))
+}) 
+
+export default connect(null, dispatchAction)(Signin);

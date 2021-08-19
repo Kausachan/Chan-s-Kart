@@ -11,6 +11,7 @@ import {setCurrentUser} from './redux/user/user.actions';
 import {selectCurrentuser} from './redux/user/user.selectors'; 
 import {createStructuredSelector} from 'reselect';
 import Checkout from './page/checkout/Checkout.component';
+import Loader from 'react-loader';
 
 class App extends React.Component{
 
@@ -18,6 +19,7 @@ class App extends React.Component{
 
 
   componentDidMount(){
+    const {setUserAction} = this.props;
     const {setCurrentUser} = this.props;
     this.unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth =>
      {
@@ -44,6 +46,18 @@ class App extends React.Component{
     return(
       <div>
         <Header/>
+        {
+          this.props.loader ?
+          (
+            <Loader loaded={false} lines={13} length={20} width={10} radius={30}
+            corners={1} rotate={0} direction={1} color="#000" speed={1}
+            trail={60} shadow={false} hwaccel={false} className="spinner"
+            zIndex={2e9} top="50%" left="50%" scale={1.00}
+            loadedClassName="loadedContent" />
+            )
+          :
+          null
+        }
         <Switch>
           <Route exact path = "/" component = {Homepage}/>
           <Route  path = "/shop" component = {Shoppage}/>
@@ -57,9 +71,12 @@ class App extends React.Component{
  
 }
 
-const mapStateToProps = createStructuredSelector({
-  currentUser : selectCurrentuser
+const mapStateToProps = ({user, loader}) => ({
+  currentUser : user.currentUser,
+  loader : loader.loader
 })
+  
+
 
 const mapDispatchToProps = dispatch =>({
   setCurrentUser : user => 

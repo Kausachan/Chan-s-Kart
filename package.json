@@ -1,6 +1,7 @@
 {
   "name": "prac",
   "version": "0.1.0",
+  "homepage": "https://kausachan.github.io/Chan-s-Kart/",
   "private": true,
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
@@ -12,6 +13,7 @@
     "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-loader": "^2.4.7",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -20,9 +22,12 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "reselect": "^4.0.0",
+    "styled-components": "^5.3.0",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
