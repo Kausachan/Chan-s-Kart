@@ -1,7 +1,7 @@
 {
   "name": "prac",
   "version": "0.1.0",
-  "homepage": "https://kausachan.github.io/Chan-s-Kart/",
+  "homepage": "https://kausachan.github.io/Chan-s-Kart",
   "private": true,
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
