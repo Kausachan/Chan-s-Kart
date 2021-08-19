@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Chan-s-Kart/static/css/main.cb5c786c.chunk.css",
+    "main.js": "/Chan-s-Kart/static/js/main.1f8e8ab4.chunk.js",
+    "main.js.map": "/Chan-s-Kart/static/js/main.1f8e8ab4.chunk.js.map",
+    "runtime-main.js": "/Chan-s-Kart/static/js/runtime-main.a524535d.js",
+    "runtime-main.js.map": "/Chan-s-Kart/static/js/runtime-main.a524535d.js.map",
+    "static/js/2.d862e4d0.chunk.js": "/Chan-s-Kart/static/js/2.d862e4d0.chunk.js",
+    "static/js/2.d862e4d0.chunk.js.map": "/Chan-s-Kart/static/js/2.d862e4d0.chunk.js.map",
+    "index.html": "/Chan-s-Kart/index.html",
+    "static/css/main.cb5c786c.chunk.css.map": "/Chan-s-Kart/static/css/main.cb5c786c.chunk.css.map",
+    "static/js/2.d862e4d0.chunk.js.LICENSE.txt": "/Chan-s-Kart/static/js/2.d862e4d0.chunk.js.LICENSE.txt",
+    "static/media/crown.3a4e2b15.svg": "/Chan-s-Kart/static/media/crown.3a4e2b15.svg",
+    "static/media/shopping-bag.a688874f.svg": "/Chan-s-Kart/static/media/shopping-bag.a688874f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a524535d.js",
+    "static/js/2.d862e4d0.chunk.js",
+    "static/css/main.cb5c786c.chunk.css",
+    "static/js/main.1f8e8ab4.chunk.js"
+  ]
+}
