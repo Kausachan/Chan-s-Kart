@@ -14,24 +14,24 @@ const INITIAL_STATE = {
 					matchUrl : 'shop/jackets'
 				},
 				{
-					title : 'PARTY WEAR',
+					title : 'MENS',
 					id : 3,
 					img :'https://img.freepik.com/free-photo/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing_197531-11045.jpg?size=626&ext=jpg',
-					matchUrl : 'shop/partwear'
+					matchUrl : 'shop/mens'
 				},
 				{
-					title : 'SANDALS',
+					title : 'WOMENS',
 					id : 4,
 					img : 'https://www.etonline.com/sites/default/files/styles/max_970x546/public/images/2020-06/gettyimages-1148414799.jpg?h=2c630805&itok=XjfGtnRV',
-					matchUrl : 'shop/sandals',
+					matchUrl : 'shop/womens',
 					size : 'large'
 				},
 				{
-					title : 'FORMALS',
+					title : 'SNEAKERS',
 					id : 5,
 					img : 'https://i.pinimg.com/originals/73/f1/14/73f11461b00cf43c1c80bb1b38985b89.jpg',
 					size : 'large',
-					matchUrl : 'shop/formals'
+					matchUrl : 'shop/sneakers'
 				}
 			]
 }

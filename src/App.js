@@ -5,13 +5,14 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 import Shoppage from './page/Shoppage/Shoppage.component';
 import Header from './components/header/Header.component.jsx';
 import Signin_Signup from './page/signin/Signin_Signup.component';
-import {auth, createUserProfileDocument} from './firebase/Firebase.utils';
+import {auth, createUserProfileDocument, addCollectionAndItems} from './firebase/Firebase.utils';
 import {connect} from 'react-redux';
 import {setCurrentUser} from './redux/user/user.actions';
 import {selectCurrentuser} from './redux/user/user.selectors'; 
 import {createStructuredSelector} from 'reselect';
 import Checkout from './page/checkout/Checkout.component';
 import Loader from 'react-loader';
+import {selectCollectionsForPreview} from './redux/shop/shop.selectors';
 
 class App extends React.Component{
 
@@ -19,8 +20,7 @@ class App extends React.Component{
 
 
   componentDidMount(){
-    const {setUserAction} = this.props;
-    const {setCurrentUser} = this.props;
+    const {setUserAction, setCurrentUser, collectionsArray} = this.props;
     this.unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth =>
      {
         if(userAuth)
@@ -33,7 +33,9 @@ class App extends React.Component{
             })
           })
         }
-        else{ setCurrentUser(userAuth); }
+        setCurrentUser(userAuth); 
+        // the below code is used to add shop data to the firebase only once just for ease.
+        // addCollectionAndItems('collections', collectionsArray.map(({title, items}) => ({title, items})));
     }) 
   }
 
@@ -71,9 +73,10 @@ class App extends React.Component{
  
 }
 
-const mapStateToProps = ({user, loader}) => ({
-  currentUser : user.currentUser,
-  loader : loader.loader
+const mapStateToProps = (state) => ({
+  currentUser : state.user.currentUser,
+  loader : state.loader.loader,
+  collectionsArray : selectCollectionsForPreview(state)
 })
   
 

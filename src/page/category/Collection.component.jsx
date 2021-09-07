@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 
 
 const Collection = ({collections}) =>{
+	if(collections == null) 
+		return (null) 
 	const {title, items} = collections;
 	return(
 		<div className = "collection-page">
